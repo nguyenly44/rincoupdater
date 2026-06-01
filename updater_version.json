@@ -1,0 +1,11 @@
+{
+    "version":  "1.0.1",
+    "releaseNotes":  [
+                         "Added Self-Update feature",
+                         "Added User Name mapping in Feedback"
+                     ],
+    "downloadUrl":  "https://github.com/nguyenly44/rincoupdater/releases/download/v1.0.6/RincoUpdater.msi",
+    "mandatory":  false,
+    "releaseDate":  "01/06/2026",
+    "minOsVersion":  "Windows 10"
+}
