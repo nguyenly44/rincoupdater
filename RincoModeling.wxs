@@ -1,0 +1,209 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package Name="RincoModeling for Revit"
+           Manufacturer="Rinco"
+           Version="1.0.7.0"
+           UpgradeCode="a7c3e891-5d42-4f1b-b6e8-3a9d0c7f2e15"
+           Scope="perUser">
+
+    <MajorUpgrade Schedule="afterInstallInitialize" DowngradeErrorMessage="Phien ban moi hon da duoc cai dat." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <!-- Dùng Property để trỏ trực tiếp, tránh kích hoạt logic bảo vệ CommonAppDataFolder của MSI engine -->
+    <Property Id="PLUGINROOT" Value="C:\ProgramData\Autodesk\ApplicationPlugins" />
+
+    <StandardDirectory Id="TARGETDIR">
+      <Directory Id="PLUGINROOT" Name="ApplicationPlugins">
+        <Directory Id="BUNDLEFOLDER" Name="RincoModeling.bundle">
+
+            <!-- Top-level -->
+            <Component Id="PackageContentsXml" Guid="b1a00001-0001-0001-0001-000000000001">
+              <File Id="PackageContentsXml" Source="..\RincoModeling\RincoModeling.bundle\PackageContents.xml" KeyPath="yes" />
+            </Component>
+            <Component Id="VersionTxt" Guid="b1a00001-0001-0001-0001-000000000002">
+              <File Id="VersionTxt" Source="..\RincoModeling\RincoModeling.bundle\version.txt" KeyPath="yes" />
+            </Component>
+
+            <Directory Id="ContentsDir" Name="Contents">
+
+              <!-- ===== 2022 ===== -->
+              <Directory Id="Dir2022" Name="2022">
+                <Component Id="Addin2022"      Guid="b1220001-0001-0001-0001-000000000001"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2022\RincoModeling.addin"                KeyPath="yes" /></Component>
+                <Component Id="Dll2022"        Guid="b1220001-0001-0001-0001-000000000002"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2022\RincoModeling.dll"                  KeyPath="yes" /></Component>
+                <Component Id="Bouncy2022"     Guid="b1220001-0001-0001-0001-000000000003"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2022\BouncyCastle.Cryptography.dll"      KeyPath="yes" /></Component>
+                <Component Id="ClosedXml2022"  Guid="b1220001-0001-0001-0001-000000000004"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2022\ClosedXML.dll"                      KeyPath="yes" /></Component>
+                <Component Id="DocFmt2022"     Guid="b1220001-0001-0001-0001-000000000005"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2022\DocumentFormat.OpenXml.dll"         KeyPath="yes" /></Component>
+                <Component Id="ExcelNum2022"   Guid="b1220001-0001-0001-0001-000000000006"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2022\ExcelNumberFormat.dll"              KeyPath="yes" /></Component>
+                <Component Id="Itext2022"      Guid="b1220001-0001-0001-0001-000000000007"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2022\itextsharp.dll"                     KeyPath="yes" /></Component>
+                <Component Id="MatIco2022"     Guid="b1220001-0001-0001-0001-000000000008"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2022\Material.Icons.dll"                 KeyPath="yes" /></Component>
+                <Component Id="MatIcoWpf2022"  Guid="b1220001-0001-0001-0001-000000000009"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2022\Material.Icons.WPF.dll"             KeyPath="yes" /></Component>
+                <Component Id="MsExpr2022"     Guid="b1220001-0001-0001-0001-00000000000a"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2022\Microsoft.Expression.Drawing.dll"   KeyPath="yes" /></Component>
+                <Component Id="MsXaml2022"     Guid="b1220001-0001-0001-0001-00000000000b"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2022\Microsoft.Xaml.Behaviors.dll"       KeyPath="yes" /></Component>
+                <Component Id="Newton2022"     Guid="b1220001-0001-0001-0001-00000000000c"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2022\Newtonsoft.Json.dll"                KeyPath="yes" /></Component>
+                <Component Id="RevAsync2022"   Guid="b1220001-0001-0001-0001-00000000000d"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2022\Revit.Async.dll"                   KeyPath="yes" /></Component>
+                <Component Id="CodeDom2022"    Guid="b1220001-0001-0001-0001-00000000000e"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2022\System.CodeDom.dll"                 KeyPath="yes" /></Component>
+                <Component Id="IOPkg2022"      Guid="b1220001-0001-0001-0001-00000000000f"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2022\System.IO.Packaging.dll"            KeyPath="yes" /></Component>
+              </Directory>
+
+              <!-- ===== 2023 ===== -->
+              <Directory Id="Dir2023" Name="2023">
+                <Component Id="Addin2023"      Guid="b1230001-0001-0001-0001-000000000001"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2023\RincoModeling.addin"                KeyPath="yes" /></Component>
+                <Component Id="Dll2023"        Guid="b1230001-0001-0001-0001-000000000002"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2023\RincoModeling.dll"                  KeyPath="yes" /></Component>
+                <Component Id="Bouncy2023"     Guid="b1230001-0001-0001-0001-000000000003"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2023\BouncyCastle.Cryptography.dll"      KeyPath="yes" /></Component>
+                <Component Id="ClosedXml2023"  Guid="b1230001-0001-0001-0001-000000000004"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2023\ClosedXML.dll"                      KeyPath="yes" /></Component>
+                <Component Id="DocFmt2023"     Guid="b1230001-0001-0001-0001-000000000005"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2023\DocumentFormat.OpenXml.dll"         KeyPath="yes" /></Component>
+                <Component Id="ExcelNum2023"   Guid="b1230001-0001-0001-0001-000000000006"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2023\ExcelNumberFormat.dll"              KeyPath="yes" /></Component>
+                <Component Id="Itext2023"      Guid="b1230001-0001-0001-0001-000000000007"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2023\itextsharp.dll"                     KeyPath="yes" /></Component>
+                <Component Id="MatIco2023"     Guid="b1230001-0001-0001-0001-000000000008"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2023\Material.Icons.dll"                 KeyPath="yes" /></Component>
+                <Component Id="MatIcoWpf2023"  Guid="b1230001-0001-0001-0001-000000000009"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2023\Material.Icons.WPF.dll"             KeyPath="yes" /></Component>
+                <Component Id="MsExpr2023"     Guid="b1230001-0001-0001-0001-00000000000a"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2023\Microsoft.Expression.Drawing.dll"   KeyPath="yes" /></Component>
+                <Component Id="MsXaml2023"     Guid="b1230001-0001-0001-0001-00000000000b"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2023\Microsoft.Xaml.Behaviors.dll"       KeyPath="yes" /></Component>
+                <Component Id="Newton2023"     Guid="b1230001-0001-0001-0001-00000000000c"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2023\Newtonsoft.Json.dll"                KeyPath="yes" /></Component>
+                <Component Id="RevAsync2023"   Guid="b1230001-0001-0001-0001-00000000000d"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2023\Revit.Async.dll"                   KeyPath="yes" /></Component>
+                <Component Id="CodeDom2023"    Guid="b1230001-0001-0001-0001-00000000000e"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2023\System.CodeDom.dll"                 KeyPath="yes" /></Component>
+                <Component Id="IOPkg2023"      Guid="b1230001-0001-0001-0001-00000000000f"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2023\System.IO.Packaging.dll"            KeyPath="yes" /></Component>
+              </Directory>
+
+              <!-- ===== 2024 ===== -->
+              <Directory Id="Dir2024" Name="2024">
+                <Component Id="Addin2024"      Guid="b1240001-0001-0001-0001-000000000001"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2024\RincoModeling.addin"                KeyPath="yes" /></Component>
+                <Component Id="Dll2024"        Guid="b1240001-0001-0001-0001-000000000002"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2024\RincoModeling.dll"                  KeyPath="yes" /></Component>
+                <Component Id="Bouncy2024"     Guid="b1240001-0001-0001-0001-000000000003"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2024\BouncyCastle.Cryptography.dll"      KeyPath="yes" /></Component>
+                <Component Id="ClosedXml2024"  Guid="b1240001-0001-0001-0001-000000000004"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2024\ClosedXML.dll"                      KeyPath="yes" /></Component>
+                <Component Id="DocFmt2024"     Guid="b1240001-0001-0001-0001-000000000005"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2024\DocumentFormat.OpenXml.dll"         KeyPath="yes" /></Component>
+                <Component Id="ExcelNum2024"   Guid="b1240001-0001-0001-0001-000000000006"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2024\ExcelNumberFormat.dll"              KeyPath="yes" /></Component>
+                <Component Id="Itext2024"      Guid="b1240001-0001-0001-0001-000000000007"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2024\itextsharp.dll"                     KeyPath="yes" /></Component>
+                <Component Id="MatIco2024"     Guid="b1240001-0001-0001-0001-000000000008"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2024\Material.Icons.dll"                 KeyPath="yes" /></Component>
+                <Component Id="MatIcoWpf2024"  Guid="b1240001-0001-0001-0001-000000000009"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2024\Material.Icons.WPF.dll"             KeyPath="yes" /></Component>
+                <Component Id="MsExpr2024"     Guid="b1240001-0001-0001-0001-00000000000a"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2024\Microsoft.Expression.Drawing.dll"   KeyPath="yes" /></Component>
+                <Component Id="MsXaml2024"     Guid="b1240001-0001-0001-0001-00000000000b"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2024\Microsoft.Xaml.Behaviors.dll"       KeyPath="yes" /></Component>
+                <Component Id="Newton2024"     Guid="b1240001-0001-0001-0001-00000000000c"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2024\Newtonsoft.Json.dll"                KeyPath="yes" /></Component>
+                <Component Id="RevAsync2024"   Guid="b1240001-0001-0001-0001-00000000000d"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2024\Revit.Async.dll"                   KeyPath="yes" /></Component>
+                <Component Id="CodeDom2024"    Guid="b1240001-0001-0001-0001-00000000000e"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2024\System.CodeDom.dll"                 KeyPath="yes" /></Component>
+                <Component Id="IOPkg2024"      Guid="b1240001-0001-0001-0001-00000000000f"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2024\System.IO.Packaging.dll"            KeyPath="yes" /></Component>
+              </Directory>
+
+              <!-- ===== 2025 ===== -->
+              <Directory Id="Dir2025" Name="2025">
+                <Component Id="Addin2025"      Guid="b1250001-0001-0001-0001-000000000001"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\RincoModeling.addin"                KeyPath="yes" /></Component>
+                <Component Id="Dll2025"        Guid="b1250001-0001-0001-0001-000000000002"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\RincoModeling.dll"                  KeyPath="yes" /></Component>
+                <Component Id="Bouncy2025"     Guid="b1250001-0001-0001-0001-000000000003"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\BouncyCastle.Cryptography.dll"      KeyPath="yes" /></Component>
+                <Component Id="ClosedXml2025"  Guid="b1250001-0001-0001-0001-000000000004"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\ClosedXML.dll"                      KeyPath="yes" /></Component>
+                <Component Id="ClosedXmlP2025" Guid="b1250001-0001-0001-0001-000000000005"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\ClosedXML.Parser.dll"               KeyPath="yes" /></Component>
+                <Component Id="DocFmt2025"     Guid="b1250001-0001-0001-0001-000000000006"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\DocumentFormat.OpenXml.dll"         KeyPath="yes" /></Component>
+                <Component Id="DocFmtFw2025"   Guid="b1250001-0001-0001-0001-000000000007"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\DocumentFormat.OpenXml.Framework.dll" KeyPath="yes" /></Component>
+                <Component Id="ExcelNum2025"   Guid="b1250001-0001-0001-0001-000000000008"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\ExcelNumberFormat.dll"              KeyPath="yes" /></Component>
+                <Component Id="Itext2025"      Guid="b1250001-0001-0001-0001-000000000009"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\itextsharp.dll"                     KeyPath="yes" /></Component>
+                <Component Id="ItextLgpl2025"  Guid="b1250001-0001-0001-0001-00000000000a"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\iTextSharp.LGPLv2.Core.dll"         KeyPath="yes" /></Component>
+                <Component Id="MatIco2025"     Guid="b1250001-0001-0001-0001-00000000000b"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\Material.Icons.dll"                 KeyPath="yes" /></Component>
+                <Component Id="MatIcoWpf2025"  Guid="b1250001-0001-0001-0001-00000000000c"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\Material.Icons.WPF.dll"             KeyPath="yes" /></Component>
+                <Component Id="MsExpr2025"     Guid="b1250001-0001-0001-0001-00000000000d"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\Microsoft.Expression.Drawing.dll"   KeyPath="yes" /></Component>
+                <Component Id="MsXaml2025"     Guid="b1250001-0001-0001-0001-00000000000e"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\Microsoft.Xaml.Behaviors.dll"       KeyPath="yes" /></Component>
+                <Component Id="Newton2025"     Guid="b1250001-0001-0001-0001-00000000000f"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\Newtonsoft.Json.dll"                KeyPath="yes" /></Component>
+                <Component Id="RBush2025"      Guid="b1250001-0001-0001-0001-000000000010"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\RBush.dll"                          KeyPath="yes" /></Component>
+                <Component Id="RevAsync2025"   Guid="b1250001-0001-0001-0001-000000000011"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\Revit.Async.dll"                   KeyPath="yes" /></Component>
+                <Component Id="SixFonts2025"   Guid="b1250001-0001-0001-0001-000000000012"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\SixLabors.Fonts.dll"               KeyPath="yes" /></Component>
+                <Component Id="Skia2025"       Guid="b1250001-0001-0001-0001-000000000013"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\SkiaSharp.dll"                      KeyPath="yes" /></Component>
+                <Component Id="CodeDom2025"    Guid="b1250001-0001-0001-0001-000000000014"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\System.CodeDom.dll"                 KeyPath="yes" /></Component>
+                <Component Id="IOPkg2025"      Guid="b1250001-0001-0001-0001-000000000015"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\System.IO.Packaging.dll"            KeyPath="yes" /></Component>
+                <Component Id="SysMgmt2025"    Guid="b1250001-0001-0001-0001-000000000016"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2025\System.Management.dll"              KeyPath="yes" /></Component>
+              </Directory>
+
+              <!-- ===== 2026 ===== -->
+              <Directory Id="Dir2026" Name="2026">
+                <Component Id="Addin2026"      Guid="b1260001-0001-0001-0001-000000000001"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\RincoModeling.addin"                KeyPath="yes" /></Component>
+                <Component Id="Dll2026"        Guid="b1260001-0001-0001-0001-000000000002"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\RincoModeling.dll"                  KeyPath="yes" /></Component>
+                <Component Id="Bouncy2026"     Guid="b1260001-0001-0001-0001-000000000003"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\BouncyCastle.Cryptography.dll"      KeyPath="yes" /></Component>
+                <Component Id="ClosedXml2026"  Guid="b1260001-0001-0001-0001-000000000004"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\ClosedXML.dll"                      KeyPath="yes" /></Component>
+                <Component Id="ClosedXmlP2026" Guid="b1260001-0001-0001-0001-000000000005"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\ClosedXML.Parser.dll"               KeyPath="yes" /></Component>
+                <Component Id="DocFmt2026"     Guid="b1260001-0001-0001-0001-000000000006"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\DocumentFormat.OpenXml.dll"         KeyPath="yes" /></Component>
+                <Component Id="DocFmtFw2026"   Guid="b1260001-0001-0001-0001-000000000007"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\DocumentFormat.OpenXml.Framework.dll" KeyPath="yes" /></Component>
+                <Component Id="ExcelNum2026"   Guid="b1260001-0001-0001-0001-000000000008"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\ExcelNumberFormat.dll"              KeyPath="yes" /></Component>
+                <Component Id="Itext2026"      Guid="b1260001-0001-0001-0001-000000000009"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\itextsharp.dll"                     KeyPath="yes" /></Component>
+                <Component Id="ItextLgpl2026"  Guid="b1260001-0001-0001-0001-00000000000a"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\iTextSharp.LGPLv2.Core.dll"         KeyPath="yes" /></Component>
+                <Component Id="MatIco2026"     Guid="b1260001-0001-0001-0001-00000000000b"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\Material.Icons.dll"                 KeyPath="yes" /></Component>
+                <Component Id="MatIcoWpf2026"  Guid="b1260001-0001-0001-0001-00000000000c"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\Material.Icons.WPF.dll"             KeyPath="yes" /></Component>
+                <Component Id="MsExpr2026"     Guid="b1260001-0001-0001-0001-00000000000d"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\Microsoft.Expression.Drawing.dll"   KeyPath="yes" /></Component>
+                <Component Id="MsXaml2026"     Guid="b1260001-0001-0001-0001-00000000000e"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\Microsoft.Xaml.Behaviors.dll"       KeyPath="yes" /></Component>
+                <Component Id="Newton2026"     Guid="b1260001-0001-0001-0001-00000000000f"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\Newtonsoft.Json.dll"                KeyPath="yes" /></Component>
+                <Component Id="RBush2026"      Guid="b1260001-0001-0001-0001-000000000010"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\RBush.dll"                          KeyPath="yes" /></Component>
+                <Component Id="RevAsync2026"   Guid="b1260001-0001-0001-0001-000000000011"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\Revit.Async.dll"                   KeyPath="yes" /></Component>
+                <Component Id="SixFonts2026"   Guid="b1260001-0001-0001-0001-000000000012"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\SixLabors.Fonts.dll"               KeyPath="yes" /></Component>
+                <Component Id="Skia2026"       Guid="b1260001-0001-0001-0001-000000000013"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\SkiaSharp.dll"                      KeyPath="yes" /></Component>
+                <Component Id="CodeDom2026"    Guid="b1260001-0001-0001-0001-000000000014"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\System.CodeDom.dll"                 KeyPath="yes" /></Component>
+                <Component Id="IOPkg2026"      Guid="b1260001-0001-0001-0001-000000000015"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\System.IO.Packaging.dll"            KeyPath="yes" /></Component>
+                <Component Id="SysMgmt2026"    Guid="b1260001-0001-0001-0001-000000000016"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\2026\System.Management.dll"              KeyPath="yes" /></Component>
+              </Directory>
+
+              <!-- ===== Resources ===== -->
+              <Directory Id="ResourcesDir" Name="Resources">
+                <Component Id="ResAddNSEW"     Guid="b1a00003-0001-0001-0001-000000000001"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\AddNSEW.png"           KeyPath="yes" /></Component>
+                <Component Id="ResAddViews"    Guid="b1a00003-0001-0001-0001-000000000002"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\AddViewsToSheets.png"  KeyPath="yes" /></Component>
+                <Component Id="ResArrange"     Guid="b1a00003-0001-0001-0001-000000000003"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\ArrangeViews.png"      KeyPath="yes" /></Component>
+                <Component Id="ResBubble"      Guid="b1a00003-0001-0001-0001-000000000004"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\BubbleGrids.png"       KeyPath="yes" /></Component>
+                <Component Id="ResCreateViews" Guid="b1a00003-0001-0001-0001-000000000005"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\CreateViews.png"       KeyPath="yes" /></Component>
+                <Component Id="ResDisallow"    Guid="b1a00003-0001-0001-0001-000000000006"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\DisallowWallJoins.png" KeyPath="yes" /></Component>
+                <Component Id="ResDrawReg"     Guid="b1a00003-0001-0001-0001-000000000007"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\DrawingRegister.png"   KeyPath="yes" /></Component>
+                <Component Id="ResFilter"      Guid="b1a00003-0001-0001-0001-000000000008"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\Filter.png"            KeyPath="yes" /></Component>
+                <Component Id="ResFloor"       Guid="b1a00003-0001-0001-0001-000000000009"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\FloorSeparation.png"   KeyPath="yes" /></Component>
+                <Component Id="ResLink"        Guid="b1a00003-0001-0001-0001-00000000000a"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\LinkToModel.png"       KeyPath="yes" /></Component>
+                <Component Id="ResReloadCAD"   Guid="b1a00003-0001-0001-0001-00000000000b"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\ReloadCAD.png"         KeyPath="yes" /></Component>
+                <Component Id="ResRename"      Guid="b1a00003-0001-0001-0001-00000000000c"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\RenameViews.png"       KeyPath="yes" /></Component>
+                <Component Id="ResRevision"    Guid="b1a00003-0001-0001-0001-00000000000d"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\RevisionManager.png"   KeyPath="yes" /></Component>
+                <Component Id="ResPrint"       Guid="b1a00003-0001-0001-0001-00000000000e"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\RevitPrint.png"        KeyPath="yes" /></Component>
+                <Component Id="ResSplitSlab"   Guid="b1a00003-0001-0001-0001-00000000000f"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\SplitSlab.png"         KeyPath="yes" /></Component>
+                <Component Id="ResStep"        Guid="b1a00003-0001-0001-0001-000000000010"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\Step.png"              KeyPath="yes" /></Component>
+                <Component Id="ResViews"       Guid="b1a00003-0001-0001-0001-000000000011"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\views.png"             KeyPath="yes" /></Component>
+                <Component Id="ResAddSharePara" Guid="b1a00003-0001-0001-0001-000000000012"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\AddSharePara.png"      KeyPath="yes" /></Component>
+                <Component Id="ResAlignLevels" Guid="b1a00003-0001-0001-0001-000000000013"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\AlignLevels.png"       KeyPath="yes" /></Component>
+                <Component Id="ResAlignTags"   Guid="b1a00003-0001-0001-0001-000000000014"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\AlignTags.png"         KeyPath="yes" /></Component>
+                <Component Id="ResCreateShCsv" Guid="b1a00003-0001-0001-0001-000000000015"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\CreateSheetsCsv.png"   KeyPath="yes" /></Component>
+                <Component Id="ResElementsTags" Guid="b1a00003-0001-0001-0001-000000000016"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\ElementsTags.png"      KeyPath="yes" /></Component>
+                <Component Id="ResElevCallout" Guid="b1a00003-0001-0001-0001-000000000017"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\ElevationCallout.png"    KeyPath="yes" /></Component>
+                <Component Id="ResJoinElements" Guid="b1a00003-0001-0001-0001-000000000018"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\JoinElements.png"      KeyPath="yes" /></Component>
+                <Component Id="ResResetNotes"  Guid="b1a00003-0001-0001-0001-000000000019"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\ResetNotesLegends.png" KeyPath="yes" /></Component>
+                <Component Id="ResWallDivide"  Guid="b1a00003-0001-0001-0001-00000000001a"><File Source="..\RincoModeling\RincoModeling.bundle\Contents\Resources\WallDivide.png"        KeyPath="yes" /></Component>
+              </Directory>
+
+            </Directory>
+          </Directory>
+        </Directory>
+    </StandardDirectory>
+
+    <Feature Id="Main">
+      <ComponentRef Id="PackageContentsXml" />
+      <ComponentRef Id="VersionTxt" />
+      <!-- 2022 -->
+      <ComponentRef Id="Addin2022" /><ComponentRef Id="Dll2022" /><ComponentRef Id="Bouncy2022" /><ComponentRef Id="ClosedXml2022" /><ComponentRef Id="DocFmt2022" />
+      <ComponentRef Id="ExcelNum2022" /><ComponentRef Id="Itext2022" /><ComponentRef Id="MatIco2022" /><ComponentRef Id="MatIcoWpf2022" /><ComponentRef Id="MsExpr2022" />
+      <ComponentRef Id="MsXaml2022" /><ComponentRef Id="Newton2022" /><ComponentRef Id="RevAsync2022" /><ComponentRef Id="CodeDom2022" /><ComponentRef Id="IOPkg2022" />
+      <!-- 2023 -->
+      <ComponentRef Id="Addin2023" /><ComponentRef Id="Dll2023" /><ComponentRef Id="Bouncy2023" /><ComponentRef Id="ClosedXml2023" /><ComponentRef Id="DocFmt2023" />
+      <ComponentRef Id="ExcelNum2023" /><ComponentRef Id="Itext2023" /><ComponentRef Id="MatIco2023" /><ComponentRef Id="MatIcoWpf2023" /><ComponentRef Id="MsExpr2023" />
+      <ComponentRef Id="MsXaml2023" /><ComponentRef Id="Newton2023" /><ComponentRef Id="RevAsync2023" /><ComponentRef Id="CodeDom2023" /><ComponentRef Id="IOPkg2023" />
+      <!-- 2024 -->
+      <ComponentRef Id="Addin2024" /><ComponentRef Id="Dll2024" /><ComponentRef Id="Bouncy2024" /><ComponentRef Id="ClosedXml2024" /><ComponentRef Id="DocFmt2024" />
+      <ComponentRef Id="ExcelNum2024" /><ComponentRef Id="Itext2024" /><ComponentRef Id="MatIco2024" /><ComponentRef Id="MatIcoWpf2024" /><ComponentRef Id="MsExpr2024" />
+      <ComponentRef Id="MsXaml2024" /><ComponentRef Id="Newton2024" /><ComponentRef Id="RevAsync2024" /><ComponentRef Id="CodeDom2024" /><ComponentRef Id="IOPkg2024" />
+      <!-- 2025 -->
+      <ComponentRef Id="Addin2025" /><ComponentRef Id="Dll2025" /><ComponentRef Id="Bouncy2025" /><ComponentRef Id="ClosedXml2025" /><ComponentRef Id="ClosedXmlP2025" />
+      <ComponentRef Id="DocFmt2025" /><ComponentRef Id="DocFmtFw2025" /><ComponentRef Id="ExcelNum2025" /><ComponentRef Id="Itext2025" /><ComponentRef Id="ItextLgpl2025" />
+      <ComponentRef Id="MatIco2025" /><ComponentRef Id="MatIcoWpf2025" /><ComponentRef Id="MsExpr2025" /><ComponentRef Id="MsXaml2025" /><ComponentRef Id="Newton2025" />
+      <ComponentRef Id="RBush2025" /><ComponentRef Id="RevAsync2025" /><ComponentRef Id="SixFonts2025" /><ComponentRef Id="Skia2025" /><ComponentRef Id="CodeDom2025" />
+      <ComponentRef Id="IOPkg2025" /><ComponentRef Id="SysMgmt2025" />
+      <!-- 2026 -->
+      <ComponentRef Id="Addin2026" /><ComponentRef Id="Dll2026" /><ComponentRef Id="Bouncy2026" /><ComponentRef Id="ClosedXml2026" /><ComponentRef Id="ClosedXmlP2026" />
+      <ComponentRef Id="DocFmt2026" /><ComponentRef Id="DocFmtFw2026" /><ComponentRef Id="ExcelNum2026" /><ComponentRef Id="Itext2026" /><ComponentRef Id="ItextLgpl2026" />
+      <ComponentRef Id="MatIco2026" /><ComponentRef Id="MatIcoWpf2026" /><ComponentRef Id="MsExpr2026" /><ComponentRef Id="MsXaml2026" /><ComponentRef Id="Newton2026" />
+      <ComponentRef Id="RBush2026" /><ComponentRef Id="RevAsync2026" /><ComponentRef Id="SixFonts2026" /><ComponentRef Id="Skia2026" /><ComponentRef Id="CodeDom2026" />
+      <ComponentRef Id="IOPkg2026" /><ComponentRef Id="SysMgmt2026" />
+      <!-- Resources -->
+      <ComponentRef Id="ResAddNSEW" /><ComponentRef Id="ResAddViews" /><ComponentRef Id="ResArrange" /><ComponentRef Id="ResBubble" /><ComponentRef Id="ResCreateViews" />
+      <ComponentRef Id="ResDisallow" /><ComponentRef Id="ResDrawReg" /><ComponentRef Id="ResFilter" /><ComponentRef Id="ResFloor" /><ComponentRef Id="ResLink" />
+      <ComponentRef Id="ResReloadCAD" /><ComponentRef Id="ResRename" /><ComponentRef Id="ResRevision" /><ComponentRef Id="ResPrint" /><ComponentRef Id="ResSplitSlab" />
+      <ComponentRef Id="ResStep" /><ComponentRef Id="ResViews" />
+      <ComponentRef Id="ResAddSharePara" /><ComponentRef Id="ResAlignLevels" /><ComponentRef Id="ResAlignTags" /><ComponentRef Id="ResCreateShCsv" /><ComponentRef Id="ResElementsTags" />
+      <ComponentRef Id="ResElevCallout" /><ComponentRef Id="ResJoinElements" /><ComponentRef Id="ResResetNotes" /><ComponentRef Id="ResWallDivide" />
+    </Feature>
+
+  </Package>
+</Wix>
